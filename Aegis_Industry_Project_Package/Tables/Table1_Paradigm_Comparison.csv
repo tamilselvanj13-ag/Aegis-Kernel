@@ -1,0 +1,8 @@
+Parameter,Traditional SIEM / Cloud EDR,Static TinyML Edge Sentinel,Proposed Aegis Architecture
+Physical Isolation,None (Shared Host OS / Cloud),Isolated Microcontroller,Complete Hardware Decoupling (ESP32)
+Inference Latency,50 ms - 2.5 seconds (Network),5 - 50 us (Static),1.2 us (Tree) / 18 us (Ensemble)
+Post-Deployment Adaptation,Cloud Retraining (Hours/Days),Not Supported (Static Flash),On-Device Continual SGD Replay
+Memory Footprint,Gigabytes (DRAM/Cloud),64 - 256 KB Flash (Static),Zero Heap Leakage (Bounded Static SRAM)
+Tamper Resistance,Vulnerable to Host Rootkits,High (Read-Only Firmware),Maximum (NVS Encrypted + Hardware Bus)
+Network Independence,Zero (Fails during Network Outage),Full (Autonomous Edge),Full (Air-Gapped Autonomous Operation)
+Decision Support,Post-Incident Forensic Alert,Threshold-Based Anomaly,Deterministic Threat Scoring & Actuation

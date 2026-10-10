@@ -1,0 +1,42 @@
+{
+    "dataset_name": "Aegis Kernel Process Telemetry Dataset (v2.0)",
+    "total_samples": 12000,
+    "features_count": 8,
+    "feature_definitions": {
+        "is_temp": "Binary (1: executed from /tmp, /var/tmp, or /dev/shm; 0: standard filesystem)",
+        "arg_len": "Integer (command line string length in characters, range: 10 - 500)",
+        "entropy": "Float (Shannon entropy of command arguments H(s), range: 1.50 - 6.20)",
+        "is_root": "Binary (1: process running with UID == 0 superuser privileges; 0: unprivileged user)",
+        "web_parent": "Binary (1: parent process is web server daemon like nginx, apache2, gunicorn; 0: normal parent)",
+        "is_parent_dead": "Binary (1: parent process has died or terminated, creating orphaned process; 0: alive)",
+        "memfd": "Binary (1: anonymous in-memory fileless RAM execution via memfd_create; 0: normal disk ELF)",
+        "ld_preload": "Binary (1: dynamic linker hook injection or /dev/tcp shell socket redirection; 0: none)"
+    },
+    "class_distribution": {
+        "0_SAFE": {
+            "count": 7200,
+            "percentage": "60.0%",
+            "description": "Standard developer CLI, system utilities, background daemons"
+        },
+        "1_SUSPICIOUS": {
+            "count": 2400,
+            "percentage": "20.0%",
+            "description": "Temp script execution, parameter enumeration, unverified orphans"
+        },
+        "2_MALICIOUS": {
+            "count": 1440,
+            "percentage": "12.0%",
+            "description": "Webshell spawners, crypto-miners (xmrig), base64 stage droppers"
+        },
+        "3_CRITICAL": {
+            "count": 960,
+            "percentage": "8.0%",
+            "description": "Root fileless memory droppers, reverse TCP interactive shells"
+        }
+    },
+    "train_test_split": {
+        "train_samples": 9600,
+        "test_samples": 2400,
+        "stratified": true
+    }
+}

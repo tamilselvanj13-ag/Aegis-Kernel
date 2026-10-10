@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+venv/
+env/
+.venv/
+
+# C / C++ / PlatformIO / Arduino
+.pio/
+.vscode/
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+
+# Operating System / Temporary Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Temporary log / pipe files
+wsl_pipe.txt

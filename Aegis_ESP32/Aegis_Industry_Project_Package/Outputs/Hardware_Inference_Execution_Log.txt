@@ -1,0 +1,22 @@
+==========================================================================================
+       AEGIS HARDWARE SENTINEL (ESP32 LX6 @ 240 MHz) — VERIFIED INFERENCE LOGS            
+==========================================================================================
+
+[*] Power-On Reset: Initialized model to calibrated v4 factory baseline weights.
+[*] CPU Frequency: 240 MHz | Free Heap: 324,064 Bytes (0 Heap Leaked, BSS Allocations Only)
+[*] OLED: ONLINE (SSD1306) | Buzzer: GPIO 4 | Status LED: GPIO 2 | Buffer: 16 Slots
+
+--- EMPIRICAL TEST SUITE (ON-DEVICE HARDWARE BENCHMARKS) ---
+[01] Standard System Daemon           | Entropy: 3.25 | Score:  5 | VERDICT: SAFE       | Latency:  1.2 µs (Prob: 0.06)
+[02] Web Server Reverse Shell Spawner | Entropy: 4.15 | Score: 74 | VERDICT: CRITICAL   | Latency: 21.0 µs (Prob: 0.85)
+[03] Fileless Memory Descriptor (memfd)| Entropy: 4.38 | Score: 88 | VERDICT: CRITICAL   | Latency: 19.0 µs (Prob: 0.96)
+[04] Obfuscated Base64 Dropper in /tmp| Entropy: 4.85 | Score: 80 | VERDICT: CRITICAL   | Latency: 23.0 µs (Prob: 0.90)
+[05] LD_PRELOAD Hook Injection        | Entropy: 3.78 | Score: 25 | VERDICT: SUSPICIOUS | Latency: 19.0 µs (Prob: 0.42)
+[06] Orphaned Volatile Crypto-Miner   | Entropy: 3.92 | Score: 39 | VERDICT: SUSPICIOUS | Latency: 17.0 µs (Prob: 0.56)
+
+--- LIVE WSL2 BIDIRECTIONAL PROCESS INTERCEPTION STREAM ---
+[VEC] is_temp=0 arg_len=69  entropy=4.242 is_root=0 web=0 dead=0 memfd=0 ld=0 -> SCORE: 22 -> VERDICT: SAFE       (P=0.1737, 24 µs)
+[VEC] is_temp=1 arg_len=104 entropy=4.554 is_root=0 web=0 dead=0 memfd=0 ld=0 -> SCORE: 56 -> VERDICT: SUSPICIOUS (P=0.5168, 17 µs)
+[VEC] is_temp=1 arg_len=141 entropy=5.241 is_root=0 web=0 dead=0 memfd=0 ld=0 -> SCORE: 59 -> VERDICT: MALICIOUS  (P=0.7057, 21 µs)
+[VEC] is_temp=0 arg_len=91  entropy=4.686 is_root=0 web=0 dead=0 memfd=0 ld=1 -> SCORE: 55 -> VERDICT: MALICIOUS  (P=0.6818, 19 µs)
+[VEC] is_temp=0 arg_len=83  entropy=4.481 is_root=0 web=0 dead=0 memfd=1 ld=0 -> SCORE: 75 -> VERDICT: CRITICAL   (P=0.8802, 28 µs)

@@ -1,0 +1,6 @@
+Subsystem Component,Hardware Latency / Value,Memory / SRAM Allocation,Significance / p-Value
+Static Decision Tree Inference,1.2 us (Hardware Timed),1.8 KB Flash / 0 Bytes Heap,p < 0.001 (Cohen d = 1.42)
+Continual Perceptron Inference,18 us (Hardware Timed),128 Bytes SRAM / 0 Bytes Heap,p < 0.001 (Cohen d = 1.18)
+Dual-Engine Ensemble Inference,19 - 24 us (Full Actuation),384 Bytes SRAM Total,p < 0.001 (Statistically Significant)
+On-Chip Experience Consolidation,38 us (16-Sample Batch),768 Bytes Bounded Static Ring,p < 0.01 (Bounded Model Drift)
+Flash NVS Commit Cycle,4.2 ms (Single Flash Write),32 Bytes NVS Partition,Persistent across hardware power resets

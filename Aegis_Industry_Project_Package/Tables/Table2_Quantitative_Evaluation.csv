@@ -1,0 +1,6 @@
+Threat Classification Level,Accuracy (%),Precision (%),Recall (%),F1-Score (%),Support Samples
+SAFE (Normal Daemon/CLI),96.7%,100.0%,94.5%,97.2%,1440
+SUSPICIOUS (Abnormal Args/Tmp),92.1%,80.2%,91.0%,85.3%,480
+MALICIOUS (Webshell/Miners),91.8%,80.4%,88.2%,84.1%,288
+CRITICAL (memfd/Reverse TCP),98.5%,97.7%,87.0%,92.0%,192
+Weighted Overall Performance,92.46%,93.0%,92.5%,92.7%,2400

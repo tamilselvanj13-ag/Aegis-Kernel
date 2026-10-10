@@ -1,0 +1,28 @@
+# Compiled Binaries & Executables
+*.exe
+*.o
+*.obj
+*.bin
+*.elf
+*.hex
+
+# Python Caches & Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Arduino Build Output & Temp Files
+build/
+.arduino15/
+*.tmp
+
+# VS Code & IDE Folders
+.vscode/
+.idea/
+
+# OS Specific
+Thumbs.db
+.DS_Store
